@@ -13,8 +13,9 @@ module.exports = function(app){
 
 	app.get('/news', function(request, response){
 		var connection = app.config.dbConnection();
+		var newsModel = new app.app.models.NewsDAO(connection);
 
-		connection.query('select * from noticias', function(error, result){
+		newsModel.getNews(function(error, result){
 			response.render("news/news", {noticias : result});
 		});
 	});

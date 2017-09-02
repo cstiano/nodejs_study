@@ -37,6 +37,19 @@ $ npm install mysql
 $ npm consign --save
 ```
 
+Bodyparse
+
+```sh
+$ npm install body-parser --save
+```
+
+Express validator
+	- Used to validate the data resquest.
+
+```sh
+$ npm install express-validator --save 
+```
+
 ## Server MySQL on ubuntu (used in some part of the study)
 
 Installing:
