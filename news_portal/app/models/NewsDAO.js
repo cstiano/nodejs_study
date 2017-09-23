@@ -6,8 +6,8 @@ NewsDAO.prototype.getNews = function(callback){
 	this._connection.query('select * from noticias order by data_criacao desc', callback);
 }
 
-NewsDAO.prototype.getNew = function(callback){
-	this._connection.query('select * from noticias where id_noticias = 2', callback);
+NewsDAO.prototype.getNew = function(id_noticia, callback){
+	this._connection.query('select * from noticias where id_noticias = '+ id_noticia.id_noticia, callback);
 }
 
 NewsDAO.prototype.salvarNews = function(noticia, callback){
