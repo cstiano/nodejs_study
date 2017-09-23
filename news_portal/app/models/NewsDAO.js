@@ -3,7 +3,7 @@ function NewsDAO(connection){
 }
 
 NewsDAO.prototype.getNews = function(callback){
-	this._connection.query('select * from noticias', callback);
+	this._connection.query('select * from noticias order by data_criacao desc', callback);
 }
 
 NewsDAO.prototype.getNew = function(callback){
