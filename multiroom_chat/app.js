@@ -7,4 +7,15 @@ var server = app.listen(3000, function() {
 	console.log("Server running");
 });
 
-require('socket.io').listen(server);
+var io = require('socket.io').listen(server);
+
+app.set('io',io);
+
+/* Criar a conexão por websocket */
+io.on('connection', function(socket){
+	console.log('User connected');
+
+	socket.on('disconnect',function(){
+		console.log('User disconnected');
+	});
+});
