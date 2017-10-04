@@ -19,7 +19,7 @@ app.post('/addUser', function (req, res) {
        console.log( data );
        res.end( JSON.stringify(data));
    });
-})
+});
 
 var server = app.listen(8081, function () {
 
