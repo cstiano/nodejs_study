@@ -19,4 +19,4 @@ app.listen(3000, function() {
 
 
 //comand to send by terminal (debug)
-//curl -H "Content-Type: application/json" -X POST -d '{"name":"Joesley","idade":35, "matricula":392}' http://localhost:3000/testPost
+//curl -H "Content-Type: application/json" -X POST -d '{"name":"Joesley","idade":35}' http://localhost:3000/testPost

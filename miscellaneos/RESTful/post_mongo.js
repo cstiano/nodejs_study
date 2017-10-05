@@ -11,24 +11,25 @@ app.post('/testPost', function(request,response){
 	var db = mongoose.connection;
 	db.on('error', console.error);
 	db.once('open', function(){
-		var alunoSchema = mongoose.Schema({
-			name: String,
-			idade: Number,
-			matricula: Number
+		var busSchema = mongoose.Schema({
+			placa: String,
+			id_sensor: Number,
 		});
 
-		var Aluno = mongoose.model('Aluno', alunoSchema);
+		var Bus = mongoose.model('Bus', busSchema);
 
-		var addAluno = new Aluno(request.body);
-		addAluno.save(function(err){
+		var addBus = new Bus(request.body);
+		addBus.save(function(err){
 			if(err) console.log(err);
 			else console.log("Saved on database.");
 		});
 	});
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://mobbipp_app:mobbipp0@ds161164.mlab.com:61164/mobbipp_db/fleet');
 	response.end("Finished");
 });
 
 app.listen(3000, function() {
 	console.log("Server Runnig");
 });
+
+//curl -H "Content-Type: application/json" -X POST -d '{"placa":"KJI2013","id_sensor":1}' http://localhost:3000/testPost
