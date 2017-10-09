@@ -13,13 +13,8 @@ var test = {
     "_id": {
         "$oid": "59d6732eb070ac0012167590"
     },
-    "id_bus": 0,
     "device": "2459D1",
     "data": "0312345678",
-    "temp": 3,
-    "hum": 0,
-    "lum": 0,
-    "voltage": 772,
     "__v": 0
 };
 
@@ -31,6 +26,8 @@ console.log("Media: "+test["data"].slice(4,6));
 console.log("Intensidade: "+test["data"].slice(6,8));
 console.log("Velocidade: " + test["data"].slice(8,10));
 
+test['id_bus'] = test["data"].slice(ID_INIT,ID_END);
+console.log(JSON.stringify(test));
 /*
 ID_ONIBUS,
 qtd_passageirosAtual, 
